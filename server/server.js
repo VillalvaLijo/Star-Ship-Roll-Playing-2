@@ -11,6 +11,9 @@ const passport = require('./strategies/user.strategy');
 
 const userRouter = require('./routes/user.router');
 
+const shipRouter = require('./routes/ship.router');
+const battleRouter = require('./routes/battle.router');
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true}));
 
@@ -24,6 +27,9 @@ app.use(passport.session());
 // Routes
 
 app.use('/api/user', userRouter);
+
+app.use('/api/ships', shipRouter);
+app.use('/api/battles', battleRouter);
 
 //Serve Static Files
 app.use(express.static('build'));

@@ -1,6 +1,7 @@
 //import logo from './logo.svg';
 import './App.css';
-
+import '../StartPage/StartPage';
+import StartPage from '../StartPage/StartPage';
 function App() {
   return (
     <div className="App">
@@ -19,6 +20,7 @@ function App() {
       </header> */}
 
       <h1>Star-Ships Roll Playing Game</h1>
+      <StartPage/>
       
     </div>
   );
