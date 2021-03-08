@@ -10,7 +10,9 @@ passport.serializeUser((user, done) =>{
 passport.deserializeUser((id, done) => {
     pool.query('SELECT * FROM "user" WHERE id = $1', [id]).then((result) =>{
         //Handle Errors
-        const user = result && result.rows && result.rows[0]
+        const user = result && result.rows && result.rows[0]  //Look deeper into this what is user exactly as a && 
+
+        console.log("server/strategies/user.strategy  line 13, const user = ", user);
 
         if(user){
             // user found
@@ -36,6 +38,7 @@ passport.use('local', new LocalStrategy((username, password, done) =>{
     pool.query('SELECT * FROM "user" WHERE username = $1', [username])
         .then((result) => {
             const user = result && result.rows && result.rows[0];
+            console.log("/server/strategies/user.strategy.js line 40 cont user = ",user );
             if (user && encryptLib.comparePassword(password, user.password)){
                 // All good!, passwords match!
                 // done takes an error (null in this case) and a user
