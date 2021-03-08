@@ -5,4 +5,4 @@ const url = require('url');
 const router = express.Router();
 
 
-module.exports = Router
+module.exports = router

@@ -7,10 +7,19 @@ const userStrategy = require('../strategies/user.strategy')
 const router = express.Router();
 
 //handles Ajax request for user information if user is authenticated
+
+
 router.get('/', rejectUnauthenticated, (req, res) => {
     //send back user object from the session (previously queried from the database)
     res.send(req.user);
 });
+
+
+     // TEST GET REQUEST
+// router.get('/', (req, res) =>{
+//     console.log("HELLO WORLD!")
+//     res.sendStatus(200);
+// })
 
 // Handles POST request with new user data
 //The only thing different from this and every other post we've sen 
@@ -36,6 +45,15 @@ router.post('/register', (req, res, next) => {
 router.post('/login', userStrategy.authenticate('local'), (req, res) =>{
     res.sendStatus(200);
 });
+
+//clear all server session information about this user
+router.post('/logout', (req, res) => {
+    // Use passport's built-in method to log out the user
+    req.logout();
+    res.sendStatus(200);
+});
+
+module.exports = router;
 
 
 
