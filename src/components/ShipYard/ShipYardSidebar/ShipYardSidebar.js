@@ -1,8 +1,8 @@
 import React from 'react';
 import { Component } from 'react';
-import connect from 'react-redux';
+import {connect} from 'react-redux';
 
-import ShipsButton from './ShipsButton/ShipsButton';
+import ShipsButton from '../ShipsButton/ShipsButton';
 
 
 class ShipYardSidebar extends Component{
@@ -17,7 +17,7 @@ class ShipYardSidebar extends Component{
     }
 }
 
-const marStateToProps = state => ({
+const mapStateToProps = state => ({
     userShips: state.userShips
 })
 

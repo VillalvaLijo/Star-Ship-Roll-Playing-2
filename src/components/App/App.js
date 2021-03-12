@@ -7,32 +7,52 @@ import React from "react";
 import {
   BrowserRouter as Router,
   Switch,
+  Redirect,
   Route,
   Link
 } from "react-router-dom";
 import LoginForm from '../Login/LoginForm';
 
+import AboutPage from '../AboutPage/AboutPage';
+import ShipYard from '../ShipYard/ShipYard';
+import BattlePage from '../BattlePage/BattlePage';
+import BuildShip from '../BuildShip/BuildShip';
+
+
 function App() {
   return (
     <div className="App">
       <Router>
-      {/* <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
+        <Switch>
+          {/* <Redirect exact from="/" to="/home" /> */}
+          {/* 
+            Build a header that says star-ship roll playing game
+          <h1>Star-Ships Roll Playing Game</h1> */}
+          <Route
+            exact path= "/home"
+            component = {StartPage}
+            />
+           {/* <StartPage/> */}
+          <Route 
+            exact path = "/about"
+            component= {AboutPage}
+            />
+            
+          {/* <LoginForm/> */}
+          <Route
+            exact path = "/shipyard"
+            component = {ShipYard}
+            />
+          <Route
+            exact path = "/Battle"
+            component = {BattlePage}
+            />
+          <Route 
+            exact path = "/buildship"
+            component = {BuildShip}
+            />
 
-      <h1>Star-Ships Roll Playing Game</h1>
-      <StartPage/>
-      <LoginForm/>
+        </Switch>
       </Router>
       
     </div>

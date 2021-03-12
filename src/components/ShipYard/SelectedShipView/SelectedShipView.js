@@ -1,6 +1,6 @@
 import react from 'react';
 import {Component} from 'react';
-import connect from 'react-redux';
+import {connect} from 'react-redux';
 
 
 class SelectedShipView extends Component{

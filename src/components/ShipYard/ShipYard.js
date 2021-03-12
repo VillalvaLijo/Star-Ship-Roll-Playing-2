@@ -1,6 +1,6 @@
 import React from 'react';
 import { Component} from 'react';
-import connect from 'react-redux';
+import {connect} from 'react-redux';
 
 import ShipYardSidebar from './ShipYardSidebar/ShipYardSidebar';
 import SelectedShipView from './SelectedShipView/SelectedShipView';
