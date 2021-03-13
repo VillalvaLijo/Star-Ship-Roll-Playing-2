@@ -24,7 +24,7 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
-          {/* <Redirect exact from="/" to="/home" /> */}
+          <Redirect exact from="/" to="/home" />
           {/* 
             Build a header that says star-ship roll playing game
           <h1>Star-Ships Roll Playing Game</h1> */}

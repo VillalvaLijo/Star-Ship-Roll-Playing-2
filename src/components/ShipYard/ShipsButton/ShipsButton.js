@@ -11,7 +11,7 @@ class ShipsButton extends Component{
     render(){
         return (
             <div>
-                <button onClick = {this.shipsClick}>Your Ship Yard</button>
+                <button onClick = {this.shipsClick}>These are your ships</button>
             </div>
         )
     }
