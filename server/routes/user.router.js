@@ -26,14 +26,23 @@ router.get('/', rejectUnauthenticated, (req, res) => {
 // is that the password gets encrypted before being inserted
 
 router.post('/register', (req, res, next) => {
-    const username = req.body.username;
-    const password = encryptLib.encryptPassword(req.body.password);
-
     console.log("in file user.router.js, inside POST request, req.body: ", req.body);
+    //console.log("TypeOf req.body.password", typeof(req.body.password));
+    const username = req.body.username;
 
+    //const constpassword = 'password1';
+    //console.log("typeof(constpassword):", typeof(constpassword));
+
+    const password = encryptLib.encryptPassword(req.body.password);
+    //const password = encryptLib.encryptPassword(constpassword);
+    //console.log("in file user.router.js, inside POST request, req.body: ", req.body);
+
+    sqlQuery = 'INSERT INTO "User" ("UserName", "Password") VALUES ($1, $2) RETURNING id';
     pool.query(sqlQuery, [username, password])
         .then(() => res.sendStatus(201))
-        .catch(() => res.sendStatus(500));
+        .catch(() => {res.sendStatus(500)
+                    // console.log('error res:', res)
+                });
 
 });
 

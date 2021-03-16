@@ -6,6 +6,9 @@ import ShipsButton from '../ShipsButton/ShipsButton';
 
 
 class ShipYardSidebar extends Component{
+    componentDidMount(){
+        console.log("ShipYardSideBar, store", this.state)
+    }
 
     render(){
         return(
@@ -17,8 +20,10 @@ class ShipYardSidebar extends Component{
     }
 }
 
-const mapStateToProps = state => ({
-    userShips: state.userShips
-})
+// const mapStateToProps = state => ({
+//     userShips: state.userShips
+// })
+
+const mapStateToProps = (reduxStore) => ({ reduxStore })
 
 export default connect(mapStateToProps)(ShipYardSidebar);

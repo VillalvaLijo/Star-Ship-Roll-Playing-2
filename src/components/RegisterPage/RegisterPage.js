@@ -15,7 +15,7 @@ class RegisterPage extends Component {
                 type: 'REGISTER',
                 payload: {
                     username: this.state.username,
-                    passowrd: this.state.password,
+                    password: this.state.password,
                 },
             });
         }else {

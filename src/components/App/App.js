@@ -12,11 +12,14 @@ import {
   Link
 } from "react-router-dom";
 import LoginForm from '../Login/LoginForm';
+import RegisterPage from '../RegisterPage/RegisterPage';
 
 import AboutPage from '../AboutPage/AboutPage';
 import ShipYard from '../ShipYard/ShipYard';
 import BattlePage from '../BattlePage/BattlePage';
 import BuildShip from '../BuildShip/BuildShip';
+
+
 
 
 function App() {
@@ -52,6 +55,14 @@ function App() {
             component = {BuildShip}
             />
 
+          <Route 
+            exact path = "/testLogin"
+            component = {LoginForm}
+            />
+            <Route 
+            exact path = "/testRegister"
+            component = {RegisterPage}
+            />
         </Switch>
       </Router>
       
