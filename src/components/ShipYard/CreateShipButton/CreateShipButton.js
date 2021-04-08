@@ -3,8 +3,10 @@ import {Component} from 'react';
 import {connect} from 'react-redux';
 import { useDispatch } from 'react-redux'
 
-export const CreateShipButton = () => {
+const  CreateShipButton = () => {
   const dispatch = useDispatch()
+
+
 
   return (
     <div>
@@ -15,3 +17,5 @@ export const CreateShipButton = () => {
     </div>
   )
 }
+
+export default CreateShipButton;

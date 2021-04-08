@@ -1,0 +1,30 @@
+.container {
+    display: flexbox;
+    flex: 1;
+    flex-direction: Row;
+} 
+
+.shipsSidebar {
+    flex: 1;
+    display: flex;
+    width: 33%;
+    height: 100%;
+    float: left;
+    background-color: aquamarine;
+}
+
+.two-ThridsScreenShipYard{
+    width: 66%;
+    height: 100%;
+    float: center;
+}
+
+.selectedShipsView{
+    height: 50%;
+    float: center;
+}
+
+.battleStats{
+    height: 50%;
+    float: center;
+}

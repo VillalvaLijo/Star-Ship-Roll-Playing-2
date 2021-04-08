@@ -37,7 +37,7 @@ router.post('/register', (req, res, next) => {
     //const password = encryptLib.encryptPassword(constpassword);
     //console.log("in file user.router.js, inside POST request, req.body: ", req.body);
 
-    sqlQuery = 'INSERT INTO "User" ("UserName", "Password") VALUES ($1, $2) RETURNING id';
+    sqlQuery = `INSERT INTO "user" ("username", "password") VALUES ($1, $2) RETURNING id;`;
     pool.query(sqlQuery, [username, password])
         .then(() => res.sendStatus(201))
         .catch(() => {res.sendStatus(500)
@@ -52,7 +52,10 @@ router.post('/register', (req, res, next) => {
 //this middleware will send a 404 if not successful
 
 router.post('/login', userStrategy.authenticate('local'), (req, res) =>{
+    console.log("Inside login post line 56. console.log res", res);
+    
     res.sendStatus(200);
+    
 });
 
 //clear all server session information about this user

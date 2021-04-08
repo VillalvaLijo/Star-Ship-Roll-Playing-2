@@ -6,6 +6,10 @@ import ShipYardSidebar from './ShipYardSidebar/ShipYardSidebar';
 import SelectedShipView from './SelectedShipView/SelectedShipView';
 import BattleStats from './BattleStats/BattleStats';
 
+import ConditionallyRenderedTwoThirds from './ConditionallyRenderedTwoThirds/ConditionallyRenderedTwoThirds'
+
+import './ShipYard.css';
+
 
 
 class ShipYard extends Component{
@@ -14,14 +18,13 @@ class ShipYard extends Component{
         return(
             <div>
                 <h1>SHIP YARD</h1>
-                <div>
-                    <ShipYardSidebar/>
-                </div>
-                <div>
-                    <SelectedShipView/>
-                </div>
-                <div>
-                    <BattleStats/>
+                <div className = "Ship-Yard-Container">
+                
+                    <div className = "shipsSidebar">
+                        <ShipYardSidebar/>
+                    </div>
+                {/* If reduxStore.SelectedShip = create_new_ship render the createNewShipPage Component */}
+                    <ConditionallyRenderedTwoThirds/>
                 </div>
             </div>
 
@@ -29,4 +32,6 @@ class ShipYard extends Component{
     }
 }
 
-export default ShipYard;
+const mapStateToProps = (reduxStore) => ({ reduxStore })
+
+export default connect(mapStateToProps)(ShipYard);

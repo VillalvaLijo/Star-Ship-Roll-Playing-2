@@ -6,9 +6,12 @@ import {connect} from 'react-redux';
 class SelectedShipView extends Component{
 
     render(){
+
+        // if(this.state.selectedShip)
         return(
             <div>
                 <h3>Selected Ship View</h3>
+                {/* <h3>ShipName {this.state.selectedShip.name}</h3> */}
             </div>
 
         );
