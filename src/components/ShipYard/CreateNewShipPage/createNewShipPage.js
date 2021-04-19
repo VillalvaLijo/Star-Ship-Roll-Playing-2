@@ -100,11 +100,11 @@ class CreateNewShipPage extends Component{
     createNewShip =(event)=>{
         event.preventDefault();
 
-        console.log("INSIde create new ship")
+        
 
-        if (this.state.ShipValueTokens == 80){
+        if (this.state.ShipValueTokens == 0){
             //dispatch new ship to reducer
-
+            console.log("INSIde create new ship conditional statement")
             this.props.dispatch({
                 type: 'NEW_SHIP_CREATED',
                 payload: {
@@ -267,4 +267,8 @@ class CreateNewShipPage extends Component{
 
 }
 
-export default CreateNewShipPage;
+const mapDispatchToProps = dispatch => ({
+    dispatch                // ← Add this
+ })
+
+ export default connect(null, mapDispatchToProps)(CreateNewShipPage);
